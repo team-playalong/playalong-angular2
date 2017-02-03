@@ -54,18 +54,4 @@ describe(`ChordSearch`, () => {
     expect(comp.title).toEqual('Chord Search');
   });
 
-  // it('should have default data', () => {
-  //   expect(comp.localState).toEqual({ value: '' });
-  // });
-  //
-
-  //
-  // it('should log ngOnInit', () => {
-  //   spyOn(console, 'log');
-  //   expect(console.log).not.toHaveBeenCalled();
-  //
-  //   comp.ngOnInit();
-  //   expect(console.log).toHaveBeenCalled();
-  // });
-
 });

@@ -8,6 +8,7 @@ import { DataResolver } from './app.resolver';
 
 export const ROUTES: Routes = [
   { path: '',      component: ChordSearchComponent },
+  { path: 'chord-search',      component: ChordSearchComponent },
   { path: 'home',  component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'detail', loadChildren: './+detail#DetailModule'},
