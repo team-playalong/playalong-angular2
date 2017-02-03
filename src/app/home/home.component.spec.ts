@@ -17,7 +17,6 @@ import { MockBackend } from '@angular/http/testing';
 import { AppState } from '../app.service';
 import { HomeComponent } from './home.component';
 import { Title } from './title';
-import {} from 'jasmine';
 
 describe(`Home`, () => {
   let comp: HomeComponent;

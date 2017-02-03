@@ -15,17 +15,16 @@ import { MockBackend } from '@angular/http/testing';
 
 // Load the implementations that should be tested
 import { AppState } from '../app.service';
-import { HomeComponent } from './home.component';
-import { Title } from './title';
+import { ChordSearchComponent } from './chord-search.component';
 
-describe(`Home`, () => {
-  let comp: HomeComponent;
-  let fixture: ComponentFixture<HomeComponent>;
+describe(`ChordSearch`, () => {
+  let comp: ChordSearchComponent;
+  let fixture: ComponentFixture<ChordSearchComponent>;
 
   // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [HomeComponent],
+      declarations: [ChordSearchComponent],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [
         BaseRequestOptions,
@@ -38,7 +37,6 @@ describe(`Home`, () => {
           deps: [MockBackend, BaseRequestOptions]
         },
         AppState,
-        Title,
       ]
     })
     .compileComponents(); // compile template and css
@@ -46,26 +44,28 @@ describe(`Home`, () => {
 
   // synchronous beforeEach
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomeComponent);
+    fixture = TestBed.createComponent(ChordSearchComponent);
     comp = fixture.componentInstance;
 
     fixture.detectChanges(); // trigger initial data binding
   });
 
-  it('should have default data', () => {
-    expect(comp.localState).toEqual({ value: '' });
-  });
-
   it('should have a title', () => {
-    expect(!!comp.title).toEqual(true);
+    expect(comp.title).toEqual('Chord Search');
   });
 
-  it('should log ngOnInit', () => {
-    spyOn(console, 'log');
-    expect(console.log).not.toHaveBeenCalled();
+  // it('should have default data', () => {
+  //   expect(comp.localState).toEqual({ value: '' });
+  // });
+  //
 
-    comp.ngOnInit();
-    expect(console.log).toHaveBeenCalled();
-  });
+  //
+  // it('should log ngOnInit', () => {
+  //   spyOn(console, 'log');
+  //   expect(console.log).not.toHaveBeenCalled();
+  //
+  //   comp.ngOnInit();
+  //   expect(console.log).toHaveBeenCalled();
+  // });
 
 });
