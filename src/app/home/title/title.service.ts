@@ -7,7 +7,7 @@ export class Title {
   public value = 'Angular 2';
 
   constructor(
-    public http: Http
+    public http: Http,
   ) {}
 
   public getData() {
@@ -15,7 +15,7 @@ export class Title {
     // return this.http.get('/assets/data.json')
     // .map(res => res.json());
     return {
-      value: 'AngularClass'
+      value: 'AngularClass',
     };
   }
 

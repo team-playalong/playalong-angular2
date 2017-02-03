@@ -1,6 +1,6 @@
 import {
   Component,
-  OnInit
+  OnInit,
 } from '@angular/core';
 
 import { AppState } from '../app.service';
@@ -16,7 +16,7 @@ import { AppState } from '../app.service';
   // Our list of styles in our component. We may add more to compose many styles together
   styleUrls: [ './chord-search.component.css' ],
   // Every Angular template is first compiled by the browser before Angular runs it's compiler
-  templateUrl: './chord-search.component.html'
+  templateUrl: './chord-search.component.html',
 })
 export class ChordSearchComponent implements OnInit {
   // Set our default values

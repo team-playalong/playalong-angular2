@@ -3,13 +3,13 @@ import {
   inject,
   async,
   TestBed,
-  ComponentFixture
+  ComponentFixture,
 } from '@angular/core/testing';
 import { Component } from '@angular/core';
 import {
   BaseRequestOptions,
   ConnectionBackend,
-  Http
+  Http,
 } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 
@@ -35,11 +35,11 @@ describe(`Home`, () => {
           useFactory: (backend: ConnectionBackend, defaultOptions: BaseRequestOptions) => {
             return new Http(backend, defaultOptions);
           },
-          deps: [MockBackend, BaseRequestOptions]
+          deps: [MockBackend, BaseRequestOptions],
         },
         AppState,
         Title,
-      ]
+      ],
     })
     .compileComponents(); // compile template and css
   }));

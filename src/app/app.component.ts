@@ -4,7 +4,7 @@
 import {
   Component,
   OnInit,
-  ViewEncapsulation
+  ViewEncapsulation,
 } from '@angular/core';
 import { AppState } from './app.service';
 
@@ -16,7 +16,7 @@ import { AppState } from './app.service';
   selector: 'app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.css'
+    './app.component.css',
   ],
   template: `
     <nav>
@@ -44,7 +44,7 @@ import { AppState } from './app.service';
     <footer>
       <span>Playalong.io</span>
     </footer>
-  `
+  `,
 })
 export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
@@ -52,7 +52,7 @@ export class AppComponent implements OnInit {
   public url = 'https://twitter.com/AngularClass';
 
   constructor(
-    public appState: AppState
+    public appState: AppState,
   ) {}
 
   public ngOnInit() {

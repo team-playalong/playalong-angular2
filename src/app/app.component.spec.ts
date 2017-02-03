@@ -3,7 +3,7 @@ import {
   inject,
   async,
   TestBed,
-  ComponentFixture
+  ComponentFixture,
 } from '@angular/core/testing';
 
 // Load the implementations that should be tested
@@ -19,7 +19,7 @@ describe(`App`, () => {
     TestBed.configureTestingModule({
       declarations: [ AppComponent ],
       schemas: [NO_ERRORS_SCHEMA],
-      providers: [AppState]
+      providers: [AppState],
     })
     .compileComponents(); // compile template and css
   }));

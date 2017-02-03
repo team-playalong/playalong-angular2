@@ -15,13 +15,13 @@ describe('About', () => {
         useValue: {
           data: {
             subscribe: (fn: (value: Data) => void) => fn({
-              yourData: 'yolo'
-            })
-          }
-        }
+              yourData: 'yolo',
+            }),
+          },
+        },
       },
-      AboutComponent
-    ]
+      AboutComponent,
+    ],
   }));
 
   it('should log ngOnInit', inject([AboutComponent], (about: AboutComponent) => {

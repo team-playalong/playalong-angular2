@@ -1,11 +1,11 @@
 // Angular 2
 import {
   enableDebugTools,
-  disableDebugTools
+  disableDebugTools,
 } from '@angular/platform-browser';
 import {
   ApplicationRef,
-  enableProdMode
+  enableProdMode,
 } from '@angular/core';
 // Environment Providers
 let PROVIDERS: any[] = [
@@ -55,5 +55,5 @@ if ('production' === ENV) {
 export const decorateModuleRef = _decorateModuleRef;
 
 export const ENV_PROVIDERS = [
-  ...PROVIDERS
+  ...PROVIDERS,
 ];
