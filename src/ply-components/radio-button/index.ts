@@ -1,6 +1,8 @@
 import {
   Component,
   Input,
+  Output,
+  EventEmitter,
 } from '@angular/core';
 
 @Component({
@@ -8,7 +10,7 @@ import {
   styleUrls: [ './radio-button.component.css' ],
   template: `
     <md-radio-group
-      (change)="onChange"
+      (change)="onChange($event)"
     >
       {{label}}
       <md-radio-button
@@ -24,5 +26,9 @@ import {
 export class PlyRadioButtonsComponent {
   @Input() public radioButtons: any[];
   @Input() public label: string;
-  @Input() public onChange: () => void;
+  @Output() public change = new EventEmitter();
+
+  public onChange(e) {
+    this.change.emit(e.value);
+  }
 }

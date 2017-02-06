@@ -3,7 +3,14 @@
   <hr>
     <h4>{{title}}</h4>
     <ply-radio-buttons
-      (onChange)="searchByChanged"
+      (change)="onSearchByChanged($event)"
       [radioButtons]="radioButtons"
-    ></ply-radio-buttons>
+    >
+    </ply-radio-buttons>
+    <ply-text-input
+      placeholder="Search Here"
+      (change)="onSearchInputChanged($event)"
+    >
+    </ply-text-input>
+    {{searchInput || 'asd'}}
 </div>
