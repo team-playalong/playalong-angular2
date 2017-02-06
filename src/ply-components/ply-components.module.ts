@@ -1,6 +1,7 @@
 import { MaterialModule } from '@angular/material';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { PlyRadioButtonsComponent } from './radio-button';
 
@@ -11,6 +12,7 @@ import { PlyRadioButtonsComponent } from './radio-button';
   ],
   imports: [
     MaterialModule.forRoot(),
+    BrowserModule,
   ],
   exports: [
     PlyRadioButtonsComponent,

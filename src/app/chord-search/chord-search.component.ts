@@ -22,14 +22,30 @@ export class ChordSearchComponent implements OnInit {
   // Set our default values
   public localState = { value: '' };
   public title: string;
+  public radioButtons: any[];
+  public searchBy: string;
 
   // TypeScript public modifiers
   constructor(
     public appState: AppState,
   ) {}
 
+  public searchByChanged(searchBy) {
+    console.log('ads');
+    this.searchBy = searchBy;
+  }
+
   public ngOnInit() {
     this.title = 'Chord Search';
-
+    this.radioButtons = [
+      {
+        label: 'Artist',
+        value: 'artist',
+      },
+      {
+        label: 'Title',
+        value: 'title',
+      },
+    ];
   }
 }

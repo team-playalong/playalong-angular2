@@ -1,12 +1,28 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  Input,
+} from '@angular/core';
 
 @Component({
   selector: 'ply-radio-buttons',
+  styleUrls: [ './radio-button.component.css' ],
   template: `
-    <md-radio-group>
-      <md-radio-button value="1">Option 1</md-radio-button>
-      <md-radio-button value="2">Option 2</md-radio-button>
+    <md-radio-group
+      (change)="onChange"
+    >
+      {{label}}
+      <md-radio-button
+        *ngFor="let radioButton of radioButtons"
+        [name]="radioButton.name || 'radio'"
+        [value]="radioButton.value"
+      >
+        {{radioButton.label}}
+      </md-radio-button>
     </md-radio-group>
   `,
 })
-export class PlyRadioButtonsComponent {}
+export class PlyRadioButtonsComponent {
+  @Input() public radioButtons: any[];
+  @Input() public label: string;
+  @Input() public onChange: () => void;
+}

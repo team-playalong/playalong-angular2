@@ -2,5 +2,8 @@
   <h1 class="sample-content">Hello From Chord Search</h1>
   <hr>
     <h4>{{title}}</h4>
-    <ply-radio-buttons></ply-radio-buttons>
+    <ply-radio-buttons
+      (onChange)="searchByChanged"
+      [radioButtons]="radioButtons"
+    ></ply-radio-buttons>
 </div>
