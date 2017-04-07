@@ -18,6 +18,7 @@ export class ChordSearchComponent implements OnInit {
   public title: string;
   public radioButtons: any[];
   public searchBy: string;
+  public searchInput: string;
 
   // TypeScript public modifiers
   constructor(
@@ -44,5 +45,9 @@ export class ChordSearchComponent implements OnInit {
 
   public onSearchInputChanged(searchInput) {
     this.searchInput = searchInput;
+  }
+
+  public onSeachChordsBtnClicked(e) {
+    
   }
 }

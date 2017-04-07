@@ -6,12 +6,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { PlyRadioButtonsComponent } from './radio-button';
 import { PlyTextInputComponent } from './text-input';
+import { PlyBtnComponent } from './btn';
 
 @NgModule({
   declarations: [
     // Components / Directives/ Pipes
     PlyRadioButtonsComponent,
     PlyTextInputComponent,
+    PlyBtnComponent,
   ],
   imports: [
     MaterialModule.forRoot(),
@@ -21,6 +23,7 @@ import { PlyTextInputComponent } from './text-input';
   exports: [
     PlyRadioButtonsComponent,
     PlyTextInputComponent,
+    PlyBtnComponent,
   ],
 })
 export class PlyComponentsModule {}
