@@ -3,23 +3,45 @@ import {
   Input,
   Output,
   EventEmitter,
+  OnInit,
+  ElementRef,
+  ChangeDetectorRef,
 } from '@angular/core';
+
+type PlyBtnTypes = 'raised';
 
 @Component({
   selector: 'ply-btn',
   styleUrls: [ './btn.component.scss' ],
   template: `
-    <!-- <md-input-container>
-      <input md-input [placeholder]="placeholder" (change)="onChange($event)" />
-    </md-input-container> -->
     <button md-button (click)="onClick($event)"><ng-content></ng-content></button>
   `,
 })
-export class PlyBtnComponent {
+export class PlyBtnComponent implements OnInit, AfterContentInit {
+  @Input() public type: 'raised' = 'raised';
   @Output() public click = new EventEmitter();
 
+  constructor(private elementRef: ElementRef, private cdr: ChangeDetectorRef) { }
+
   public onClick(e) {
-    console.log('yo');
     this.click.emit(e.target.value);
+  }
+
+  public ngOnInit() {
+    this.getBtnAttr();
+    this.cdr.detectChanges();
+  }
+
+  private getBtnAttr() {
+    let attr;
+    switch (this.type) {
+      case 'raised':
+        attr = 'md-raised-button';
+        break;
+      default:
+        attr = 'md-button';
+        break;
+    }
+    this.elementRef.nativeElement.querySelector('button').setAttribute(attr, '');
   }
 }
