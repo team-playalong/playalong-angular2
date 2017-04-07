@@ -19,6 +19,8 @@ export class PlyTextInputComponent {
   @Output() public change = new EventEmitter();
 
   public onChange(e) {
+    e.preventDefault();
+    e.stopPropagation();
     this.change.emit(e.target.value);
   }
 }
