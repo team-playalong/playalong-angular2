@@ -4,11 +4,13 @@ import {
 } from '@angular/core';
 
 import { AppState } from '../app.service';
+import { PlyFirebaseService } from '../../ply-firebase/ply-firebase.service';
 
 @Component({
-  selector: 'chord-search',  // <home></home>
-  providers: [
-  ],
+  selector: 'chord-search',
+  // providers: [
+  //   PlyFirebaseService,
+  // ],
   styleUrls: [ './chord-search.component.css' ],
   templateUrl: './chord-search.component.html',
 })
@@ -19,10 +21,12 @@ export class ChordSearchComponent implements OnInit {
   public radioButtons: any[];
   public searchBy: string;
   public searchInput: string;
+  public chords: any;
 
   // TypeScript public modifiers
   constructor(
     public appState: AppState,
+    private PlyFirebaseService: PlyFirebaseService,
   ) {}
 
   public ngOnInit() {
@@ -48,6 +52,6 @@ export class ChordSearchComponent implements OnInit {
   }
 
   public onSeachChordsBtnClicked(e) {
-    
+    this.chords = this.PlyFirebaseService.get();
   }
 }

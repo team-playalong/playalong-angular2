@@ -13,4 +13,9 @@
     >
     </ply-text-input>
     <ply-btn (click)="onSeachChordsBtnClicked($event)">Search</ply-btn>
+    <ul>
+      <li class="text" *ngFor="let chord of chords | async">
+        {{chord.artist}}
+      </li>
+    </ul>
 </div>

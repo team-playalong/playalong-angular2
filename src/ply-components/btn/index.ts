@@ -17,7 +17,7 @@ type PlyBtnTypes = 'raised';
     <button md-button (click)="onClick($event)"><ng-content></ng-content></button>
   `,
 })
-export class PlyBtnComponent implements OnInit, AfterContentInit {
+export class PlyBtnComponent implements OnInit {
   @Input() public type: 'raised' = 'raised';
   @Output() public click = new EventEmitter();
 

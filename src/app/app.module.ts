@@ -31,6 +31,7 @@ import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
 
 import { PlyComponentsModule } from '../ply-components/ply-components.module';
+import { PlyFirebaseModule } from '../ply-firebase/ply-firebase.module';
 
 import '../styles/styles.scss';
 import '../styles/headings.css';
@@ -65,6 +66,7 @@ type StoreType = {
     FormsModule,
     HttpModule,
     PlyComponentsModule,
+    PlyFirebaseModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
