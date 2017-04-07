@@ -52,6 +52,8 @@ export class ChordSearchComponent implements OnInit {
   }
 
   public onSeachChordsBtnClicked(e) {
-    this.chords = this.PlyFirebaseService.get();
+    this.chords = this.PlyFirebaseService.get({
+      orderByChild: this.searchBy, equalTo: this.searchInput,
+    });
   }
 }
