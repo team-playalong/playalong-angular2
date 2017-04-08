@@ -2,15 +2,12 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
-
+import { PlyChordType } from '../../ply-components/chord-result';
 import { AppState } from '../app.service';
 import { PlyFirebaseService } from '../../ply-firebase/ply-firebase.service';
 
 @Component({
-  selector: 'chord-search',
-  // providers: [
-  //   PlyFirebaseService,
-  // ],
+  selector: 'ply-chord-search',
   styleUrls: [ './chord-search.component.css' ],
   templateUrl: './chord-search.component.html',
 })
@@ -22,6 +19,7 @@ export class ChordSearchComponent implements OnInit {
   public searchBy: string;
   public searchInput: string;
   public chords: any;
+  public chord: PlyChordType;
 
   // TypeScript public modifiers
   constructor(
@@ -41,6 +39,10 @@ export class ChordSearchComponent implements OnInit {
         value: 'title',
       },
     ];
+
+    this.chords = this.PlyFirebaseService.getTop({
+      limitToLast: 5, orderByChild: 'creationDate',
+    });
   }
 
   public onSearchByChanged(searchBy) {
@@ -55,5 +57,9 @@ export class ChordSearchComponent implements OnInit {
     this.chords = this.PlyFirebaseService.get({
       orderByChild: this.searchBy, equalTo: this.searchInput,
     });
+  }
+
+  public redirectToChord(chord) {
+    
   }
 }

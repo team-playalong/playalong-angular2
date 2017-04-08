@@ -1,3 +1,4 @@
+import { MaterialModule } from '@angular/material';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -67,6 +68,7 @@ type StoreType = {
     HttpModule,
     PlyComponentsModule,
     PlyFirebaseModule,
+    MaterialModule.forRoot(),
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection

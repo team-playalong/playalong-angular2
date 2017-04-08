@@ -7,6 +7,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { PlyRadioButtonsComponent } from './radio-button';
 import { PlyTextInputComponent } from './text-input';
 import { PlyBtnComponent } from './btn';
+import { PlyChordListComponent } from './chord-list';
+import { PlyChordResultComponent } from './chord-result';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,8 @@ import { PlyBtnComponent } from './btn';
     PlyRadioButtonsComponent,
     PlyTextInputComponent,
     PlyBtnComponent,
+    PlyChordListComponent,
+    PlyChordResultComponent,
   ],
   imports: [
     MaterialModule.forRoot(),
@@ -24,6 +28,8 @@ import { PlyBtnComponent } from './btn';
     PlyRadioButtonsComponent,
     PlyTextInputComponent,
     PlyBtnComponent,
+    PlyChordListComponent,
+    PlyChordResultComponent,
   ],
 })
 export class PlyComponentsModule {}

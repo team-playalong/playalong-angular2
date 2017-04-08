@@ -9,6 +9,7 @@ nav {
 
 nav a {
   background-color: $nav-button-color;
+  border-radius: 4px;
   color: white;
   padding: 8px 16px;
   margin: 8px;
@@ -16,5 +17,5 @@ nav a {
   line-height: 1.25;
   text-align: center;
   text-decoration: none;
-  border-radius: 4px;
+
 }

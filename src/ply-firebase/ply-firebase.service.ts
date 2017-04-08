@@ -15,4 +15,11 @@ export class PlyFirebaseService {
       query: { orderByChild, startAt: equalTo, endAt: `${equalTo}~` },
     });
   }
+
+  public getTop({ limitToLast, orderByChild = 'hitCount' }) {
+    console.log(`Getting top ${limitToLast} chords`);
+    return this.af.database.list('/chords', {
+      query: { orderByChild, limitToLast },
+    });
+  }
 }

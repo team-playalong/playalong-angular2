@@ -13,7 +13,7 @@ import { AppState } from './app.service';
  * Top Level Component
  */
 @Component({
-  selector: 'app',
+  selector: 'ply-app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
     './app.component.css',
@@ -46,7 +46,7 @@ import { AppState } from './app.service';
     </footer>
   `,
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
   public name = 'Angular 2 Webpack Starter';
   public url = 'https://twitter.com/AngularClass';
@@ -54,11 +54,6 @@ export class AppComponent implements OnInit {
   constructor(
     public appState: AppState,
   ) {}
-
-  public ngOnInit() {
-  
-  }
-
 }
 
 /*
