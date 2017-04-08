@@ -46,7 +46,7 @@ export class ChordSearchComponent implements OnInit {
     ];
 
     this.chords = this.PlyFirebaseService.getTop({
-      limitToLast: 5, orderByChild: 'creationDate',
+      limitToLast: 15, orderByChild: 'creationDate',
     });
   }
 

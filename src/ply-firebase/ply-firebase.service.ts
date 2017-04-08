@@ -22,4 +22,9 @@ export class PlyFirebaseService {
       query: { orderByChild, limitToLast },
     });
   }
+
+  public getById({ id }) {
+    console.log(`Getting chord ${id}`);
+    return this.af.database.object(`/chords/${id}`);
+  }
 }
