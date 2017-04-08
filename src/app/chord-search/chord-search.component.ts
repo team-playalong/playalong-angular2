@@ -44,12 +44,10 @@ export class ChordSearchComponent implements OnInit {
   }
 
   public onSearchByChanged(searchBy) {
-console.log(searchBy)
     this.searchBy = searchBy;
   }
 
   public onSearchInputChanged(searchInput) {
-console.log(searchInput)
     this.searchInput = searchInput;
   }
 

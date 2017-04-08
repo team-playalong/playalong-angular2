@@ -8,11 +8,11 @@ import {
 export class PlyFirebaseService {
   constructor(private af: AngularFire) {}
 
-  public get({ orderByChild = 'artist', equalTo: startAt = 'Asaf Avidan' }) {
-    console.log(`Searching by ${orderByChild} startAt: ${startAt}`);
+  public get({ orderByChild = 'artist', equalTo = 'Asaf Avidan' }) {
+    console.log(`Searching by ${orderByChild} equalTo: ${equalTo}`);
 
     return this.af.database.list('/chords', {
-      query: { orderByChild, startAt },
+      query: { orderByChild, startAt: equalTo, endAt: `${equalTo}~` },
     });
   }
 }

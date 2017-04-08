@@ -23,7 +23,7 @@ import {
 export class DetailComponent implements OnInit {
 
   public ngOnInit() {
-    console.log('hello `Detail` component');
+    
   }
 
 }
