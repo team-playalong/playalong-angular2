@@ -27,6 +27,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { ChordSearchComponent } from './chord-search';
+import { ChordComponent } from './chord';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -59,6 +60,7 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     ChordSearchComponent,
+    ChordComponent,
     NoContentComponent,
     XLargeDirective,
   ],

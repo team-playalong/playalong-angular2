@@ -2,6 +2,10 @@ import {
   Component,
   OnInit,
 } from '@angular/core';
+import {
+  Router,
+} from '@angular/router';
+
 import { PlyChordType } from '../../ply-components/chord-result';
 import { AppState } from '../app.service';
 import { PlyFirebaseService } from '../../ply-firebase/ply-firebase.service';
@@ -25,6 +29,7 @@ export class ChordSearchComponent implements OnInit {
   constructor(
     public appState: AppState,
     private PlyFirebaseService: PlyFirebaseService,
+    private router: Router,
   ) {}
 
   public ngOnInit() {
@@ -60,6 +65,6 @@ export class ChordSearchComponent implements OnInit {
   }
 
   public redirectToChord(chord) {
-    
+    this.router.navigate(['/chord', chord.$key]);
   }
 }
