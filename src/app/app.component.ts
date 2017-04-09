@@ -16,29 +16,14 @@ import { AppState } from './app.service';
   selector: 'ply-app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.css',
+    './app.component.scss',
   ],
   template: `
-    <nav>
-      <a [routerLink]=" ['./'] " routerLinkActive="active">
-        Index
-      </a>
-      <a [routerLink]=" ['./home'] " routerLinkActive="active">
-        Home
-      </a>
-      <a [routerLink]=" ['./detail'] " routerLinkActive="active">
-        Detail
-      </a>
-      <a [routerLink]=" ['./barrel'] " routerLinkActive="active">
-        Barrel
-      </a>
-      <a [routerLink]=" ['./about'] " routerLinkActive="active">
-        About
-      </a>
-    </nav>
-
     <main>
-      <router-outlet></router-outlet>
+      <md-sidenav-container>
+        <ply-sidenav></ply-sidenav>
+        <router-outlet></router-outlet>
+      </md-sidenav-container>
     </main>
 
     <footer>
@@ -53,7 +38,8 @@ export class AppComponent {
 
   constructor(
     public appState: AppState,
-  ) {}
+  ) {
+  }
 }
 
 /*
