@@ -1,0 +1,11 @@
+<md-card *ngIf="chord && chord.content">
+  <md-card>
+    <h1 >{{chord.artist}}  -  {{chord.title}}</h1>
+    <hr />
+  </md-card>
+
+  <md-card>
+    <div class="ply-chord-content" [innerHTML]="chord.content"></div>
+  </md-card>
+
+</md-card>
