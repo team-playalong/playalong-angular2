@@ -9,7 +9,7 @@ import {
  */
 
 @Component({
-  selector: 'detail',
+  selector: 'ply-detail',
   template: `
     <h1>Hello from Detail</h1>
     <span>
@@ -23,7 +23,7 @@ import {
 export class DetailComponent implements OnInit {
 
   public ngOnInit() {
-    
+
   }
 
 }

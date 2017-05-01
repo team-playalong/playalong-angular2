@@ -27,7 +27,7 @@ describe(`App`, () => {
   // synchronous beforeEach
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
-    comp    = fixture.componentInstance;
+    comp = fixture.componentInstance;
 
     fixture.detectChanges(); // trigger initial data binding
   });
@@ -42,13 +42,4 @@ describe(`App`, () => {
     expect(comp.angularclassLogo).toEqual('assets/img/angularclass-avatar.png');
     expect(comp.name).toEqual('Angular 2 Webpack Starter');
   });
-
-  it('should log ngOnInit', () => {
-    spyOn(console, 'log');
-    expect(console.log).not.toHaveBeenCalled();
-
-    comp.ngOnInit();
-    expect(console.log).toHaveBeenCalled();
-  });
-
 });

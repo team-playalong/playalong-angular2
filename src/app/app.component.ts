@@ -16,29 +16,19 @@ import { AppState } from './app.service';
   selector: 'ply-app',
   encapsulation: ViewEncapsulation.None,
   styleUrls: [
-    './app.component.css',
+    './app.component.scss',
   ],
   template: `
-    <nav>
-      <a [routerLink]=" ['./'] " routerLinkActive="active">
-        Index
-      </a>
-      <a [routerLink]=" ['./home'] " routerLinkActive="active">
-        Home
-      </a>
-      <a [routerLink]=" ['./detail'] " routerLinkActive="active">
-        Detail
-      </a>
-      <a [routerLink]=" ['./barrel'] " routerLinkActive="active">
-        Barrel
-      </a>
-      <a [routerLink]=" ['./about'] " routerLinkActive="active">
-        About
-      </a>
-    </nav>
-
     <main>
-      <router-outlet></router-outlet>
+      <md-sidenav-container (click)="this.isSidenavOpen = false">
+        <div class="ply-sidenav-content">
+          <button md-button (click)="this.openSidenav($event)">
+            Open sidenav
+          </button>
+        </div>
+        <ply-sidenav [isOpened]="isSidenavOpen"></ply-sidenav>
+        <router-outlet></router-outlet>
+      </md-sidenav-container>
     </main>
 
     <footer>
@@ -46,14 +36,26 @@ import { AppState } from './app.service';
     </footer>
   `,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
   public name = 'Angular 2 Webpack Starter';
   public url = 'https://twitter.com/AngularClass';
+  public isSidenavOpen: boolean;
 
   constructor(
     public appState: AppState,
-  ) {}
+  ) {
+  }
+
+  public ngOnInit() {
+    this.isSidenavOpen = false;
+  }
+
+  public openSidenav(e: Event) {
+    this.isSidenavOpen = true;
+    e.preventDefault();
+    e.stopPropagation();
+  }
 }
 
 /*

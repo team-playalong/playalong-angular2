@@ -28,6 +28,7 @@ import { AppState, InternalStateType } from './app.service';
 import { HomeComponent } from './home';
 import { ChordSearchComponent } from './chord-search';
 import { ChordComponent } from './chord';
+import { SidenavComponent } from './sidenav';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -61,6 +62,7 @@ type StoreType = {
     HomeComponent,
     ChordSearchComponent,
     ChordComponent,
+    SidenavComponent,
     NoContentComponent,
     XLargeDirective,
   ],
