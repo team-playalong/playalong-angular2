@@ -8,6 +8,8 @@ import {
 } from '@angular/core';
 import { AppState } from './app.service';
 
+import { Sidenav } from './sidenav/sidenav.service';
+
 /*
  * App Component
  * Top Level Component
@@ -20,13 +22,10 @@ import { AppState } from './app.service';
   ],
   template: `
     <main>
-      <md-sidenav-container (click)="this.isSidenavOpen = false">
-        <div class="ply-sidenav-content">
-          <button md-button (click)="this.openSidenav($event)">
-            Open sidenav
-          </button>
-        </div>
-        <ply-sidenav [isOpened]="isSidenavOpen"></ply-sidenav>
+
+      <md-sidenav-container (click)="this.sidenav.closeSidenav()">
+        <ply-toolbar></ply-toolbar>
+        <ply-sidenav></ply-sidenav>
         <router-outlet></router-outlet>
       </md-sidenav-container>
     </main>
@@ -44,17 +43,12 @@ export class AppComponent implements OnInit {
 
   constructor(
     public appState: AppState,
+    public sidenav: Sidenav,
   ) {
   }
 
   public ngOnInit() {
     this.isSidenavOpen = false;
-  }
-
-  public openSidenav(e: Event) {
-    this.isSidenavOpen = true;
-    e.preventDefault();
-    e.stopPropagation();
   }
 }
 

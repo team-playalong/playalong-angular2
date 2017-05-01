@@ -29,6 +29,8 @@ import { HomeComponent } from './home';
 import { ChordSearchComponent } from './chord-search';
 import { ChordComponent } from './chord';
 import { SidenavComponent } from './sidenav';
+import { Sidenav } from './sidenav/sidenav.service';
+import { ToolbarComponent } from './toolbar';
 import { AboutComponent } from './about';
 import { NoContentComponent } from './no-content';
 import { XLargeDirective } from './home/x-large';
@@ -63,6 +65,7 @@ type StoreType = {
     ChordSearchComponent,
     ChordComponent,
     SidenavComponent,
+    ToolbarComponent,
     NoContentComponent,
     XLargeDirective,
   ],
@@ -78,6 +81,7 @@ type StoreType = {
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,
     APP_PROVIDERS,
+    Sidenav,
   ],
 })
 export class AppModule {
