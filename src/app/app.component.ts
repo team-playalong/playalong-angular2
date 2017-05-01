@@ -20,8 +20,13 @@ import { AppState } from './app.service';
   ],
   template: `
     <main>
-      <md-sidenav-container>
-        <ply-sidenav></ply-sidenav>
+      <md-sidenav-container (click)="this.isSidenavOpen = false">
+        <div class="ply-sidenav-content">
+          <button md-button (click)="this.openSidenav($event)">
+            Open sidenav
+          </button>
+        </div>
+        <ply-sidenav [isOpened]="isSidenavOpen"></ply-sidenav>
         <router-outlet></router-outlet>
       </md-sidenav-container>
     </main>
@@ -31,14 +36,25 @@ import { AppState } from './app.service';
     </footer>
   `,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public angularclassLogo = 'assets/img/angularclass-avatar.png';
   public name = 'Angular 2 Webpack Starter';
   public url = 'https://twitter.com/AngularClass';
+  public isSidenavOpen: boolean;
 
   constructor(
     public appState: AppState,
   ) {
+  }
+
+  public ngOnInit() {
+    this.isSidenavOpen = false;
+  }
+
+  public openSidenav(e: Event) {
+    this.isSidenavOpen = true;
+    e.preventDefault();
+    e.stopPropagation();
   }
 }
 

@@ -1,6 +1,7 @@
 import {
   Component,
   OnInit,
+  Input,
   ElementRef,
 } from '@angular/core';
 import {
@@ -17,12 +18,7 @@ type PlyMenuItemType = {
   selector: 'ply-sidenav',
   styleUrls: [ './sidenav.component.scss' ],
   template: `
-    <div class="ply-sidenav-content">
-      <button md-button (click)="sidenav.open()">
-        Open sidenav
-      </button>
-    </div>
-    <md-sidenav #sidenav class="ply-sidenav">
+    <md-sidenav [opened]="isOpened" class="ply-sidenav">
       <nav>
         <a
           *ngFor="let menuItem of menuItems"
@@ -37,11 +33,12 @@ type PlyMenuItemType = {
   `,
 })
 export class SidenavComponent implements OnInit {
+  @Input() public isOpened: boolean;
   private menuItems: PlyMenuItemType[];
 
-constructor(
-    private route: ActivatedRoute,
-  ) {}
+  constructor(
+      private route: ActivatedRoute,
+    ) {}
 
   public ngOnInit() {
     this.menuItems = [

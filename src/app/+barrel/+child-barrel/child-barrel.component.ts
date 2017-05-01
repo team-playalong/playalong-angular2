@@ -9,7 +9,7 @@ import {
  */
 
 @Component({
-  selector: 'child-barrel',
+  selector: 'ply-child-barrel',
   template: `
     <h1>Hello from Child Barrel</h1>
   `,

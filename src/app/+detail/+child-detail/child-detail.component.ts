@@ -9,7 +9,7 @@ import {
  */
 
 @Component({
-  selector: 'child-detail',
+  selector: 'ply-child-detail',
   template: `
     <h1>Hello from Child Detail</h1>
   `,
